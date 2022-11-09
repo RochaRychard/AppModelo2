@@ -1,0 +1,7 @@
+﻿CREATE TABLE nacionalidades(
+Id int NOT NULL AUTO_INCREMENT,
+Descricao varchar(250) NOT NULL,
+CONSTRAINT pk_NACIONALIDADES_id PRIMARY KEY (Id)
+);
+
+
