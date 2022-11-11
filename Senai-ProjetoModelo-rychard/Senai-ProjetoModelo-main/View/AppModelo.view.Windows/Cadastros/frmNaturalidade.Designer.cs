@@ -38,6 +38,8 @@
             this.chkStatus = new System.Windows.Forms.CheckBox();
             this.btnSalvarDescricaoNaturalidade = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnRemover = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgNaturalidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +50,7 @@
             this.dgNaturalidade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgNaturalidade.Location = new System.Drawing.Point(12, 168);
             this.dgNaturalidade.Name = "dgNaturalidade";
-            this.dgNaturalidade.Size = new System.Drawing.Size(436, 150);
+            this.dgNaturalidade.Size = new System.Drawing.Size(413, 150);
             this.dgNaturalidade.TabIndex = 2;
             // 
             // panel1
@@ -57,7 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 36);
+            this.panel1.Size = new System.Drawing.Size(437, 36);
             this.panel1.TabIndex = 3;
             // 
             // txtIdNaturalidade
@@ -89,7 +91,7 @@
             // 
             this.txtDescricaoNaturalidade.Location = new System.Drawing.Point(12, 124);
             this.txtDescricaoNaturalidade.Name = "txtDescricaoNaturalidade";
-            this.txtDescricaoNaturalidade.Size = new System.Drawing.Size(233, 20);
+            this.txtDescricaoNaturalidade.Size = new System.Drawing.Size(191, 20);
             this.txtDescricaoNaturalidade.TabIndex = 7;
             // 
             // chkStatus
@@ -97,7 +99,7 @@
             this.chkStatus.AutoSize = true;
             this.chkStatus.Checked = true;
             this.chkStatus.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkStatus.Location = new System.Drawing.Point(265, 126);
+            this.chkStatus.Location = new System.Drawing.Point(138, 66);
             this.chkStatus.Name = "chkStatus";
             this.chkStatus.Size = new System.Drawing.Size(50, 17);
             this.chkStatus.TabIndex = 8;
@@ -106,9 +108,9 @@
             // 
             // btnSalvarDescricaoNaturalidade
             // 
-            this.btnSalvarDescricaoNaturalidade.Location = new System.Drawing.Point(373, 121);
+            this.btnSalvarDescricaoNaturalidade.Location = new System.Drawing.Point(138, 339);
             this.btnSalvarDescricaoNaturalidade.Name = "btnSalvarDescricaoNaturalidade";
-            this.btnSalvarDescricaoNaturalidade.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvarDescricaoNaturalidade.Size = new System.Drawing.Size(173, 23);
             this.btnSalvarDescricaoNaturalidade.TabIndex = 10;
             this.btnSalvarDescricaoNaturalidade.Text = "Salvar";
             this.btnSalvarDescricaoNaturalidade.UseVisualStyleBackColor = true;
@@ -118,11 +120,33 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnRemover
+            // 
+            this.btnRemover.Location = new System.Drawing.Point(350, 124);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(75, 23);
+            this.btnRemover.TabIndex = 11;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Location = new System.Drawing.Point(236, 124);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizar.TabIndex = 12;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
             // frmNaturalidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 325);
+            this.ClientSize = new System.Drawing.Size(437, 388);
+            this.Controls.Add(this.btnAtualizar);
+            this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnSalvarDescricaoNaturalidade);
             this.Controls.Add(this.chkStatus);
             this.Controls.Add(this.txtDescricaoNaturalidade);
@@ -150,5 +174,7 @@
         private System.Windows.Forms.CheckBox chkStatus;
         private System.Windows.Forms.Button btnSalvarDescricaoNaturalidade;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.Button btnAtualizar;
     }
 }

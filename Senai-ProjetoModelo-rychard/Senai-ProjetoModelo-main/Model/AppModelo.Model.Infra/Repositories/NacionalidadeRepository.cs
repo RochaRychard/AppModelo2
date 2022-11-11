@@ -4,6 +4,7 @@ using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Data;
 
+
 namespace AppModelo.Model.Infra.Repositories
 {
     public class NacionalidadeRepository
@@ -26,16 +27,19 @@ namespace AppModelo.Model.Infra.Repositories
 
         public bool Atualizar(string descricao, int id)
         {
-            var sql = $"UPDATE funcionarios SET descricao = '{descricao}' WHERE id = {id}";
+            var sql = $"UPDATE nacionalidades SET Descricao = '{descricao}' WHERE Id = {id}";
             using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
             var resultado = conexaoBd.Execute(sql);
             return resultado > 0;
         }
 
-        public bool Remover() 
+        public bool Remover(int id) 
          {
-            return false;
-         }
+            var sql = $" DELETE FROM nacionalidades WHERE Id = {id}";
+            using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
+            var resultado = conexaoBd.Execute(sql);
+            return resultado > 0;
+        }
 
         public IEnumerable<NacionalidadeEntity> ObterTodos()
         {

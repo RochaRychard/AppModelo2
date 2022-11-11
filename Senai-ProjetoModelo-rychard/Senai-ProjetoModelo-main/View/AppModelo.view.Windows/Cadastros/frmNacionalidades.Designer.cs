@@ -78,6 +78,7 @@
             // 
             // gvNacionalidades
             // 
+            this.gvNacionalidades.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gvNacionalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvNacionalidades.Location = new System.Drawing.Point(12, 141);
             this.gvNacionalidades.Name = "gvNacionalidades";
@@ -86,7 +87,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(116, 336);
+            this.btnSalvar.Location = new System.Drawing.Point(116, 322);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(173, 23);
             this.btnSalvar.TabIndex = 5;
@@ -106,12 +107,13 @@
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(214, 105);
+            this.btnAtualizar.Location = new System.Drawing.Point(214, 106);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizar.TabIndex = 7;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnRemover
             // 
@@ -121,6 +123,7 @@
             this.btnRemover.TabIndex = 8;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // errorProvider1
             // 
@@ -142,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 410);
+            this.ClientSize = new System.Drawing.Size(419, 372);
             this.Controls.Add(this.chkStatus);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnAtualizar);

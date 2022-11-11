@@ -394,6 +394,7 @@
             this.txtEnderecoUf.Name = "txtEnderecoUf";
             this.txtEnderecoUf.Size = new System.Drawing.Size(100, 27);
             this.txtEnderecoUf.TabIndex = 35;
+           
             // 
             // txtEnderecoCep
             // 

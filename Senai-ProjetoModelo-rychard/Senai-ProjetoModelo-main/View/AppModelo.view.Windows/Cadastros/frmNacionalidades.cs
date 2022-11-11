@@ -1,5 +1,6 @@
 ﻿using AppModelo.Controller.Cadastros;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace AppModelo.view.Windows.Cadastros
@@ -29,7 +30,7 @@ namespace AppModelo.view.Windows.Cadastros
             else
             { 
 
-                var salvou = _nacionalidadeController.Cadastrar(txtDescricaoNacionalidade.Text);
+                var salvou = _nacionalidadeController.Cadastrar(txtDescricaoNacionalidade.Text.ToUpper());
                 if (salvou)
                 {
                     MessageBox.Show("Nacionalidade incluída com sucesso!");
@@ -47,6 +48,37 @@ namespace AppModelo.view.Windows.Cadastros
                 
             }
             
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            var numero = int.Parse(txtId.Text);
+            var atualizou = _nacionalidadeController.Atualizar(txtDescricaoNacionalidade.Text.ToUpper(), numero);
+            if (atualizou)
+            {
+                MessageBox.Show("Nacionalidade atualizada com sucesso!");
+                txtDescricaoNacionalidade.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Houve um erro ao atualizar no banco de dados!");
+            }
+
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            var numero = int.Parse(txtId.Text);
+            var removeu = _nacionalidadeController.Remover(numero);
+            if (removeu)
+            {
+                MessageBox.Show("Nacionalidade removidada com sucesso!");
+                txtDescricaoNacionalidade.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Houve um erro ao remover do banco de dados!");
+            }
         }
     }
 }

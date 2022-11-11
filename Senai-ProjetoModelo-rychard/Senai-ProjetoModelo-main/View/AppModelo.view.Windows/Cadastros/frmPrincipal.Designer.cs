@@ -32,6 +32,7 @@
             this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nacionalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.naturalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,12 +69,21 @@
             this.naturalidadeToolStripMenuItem.Text = "Naturalidade";
             this.naturalidadeToolStripMenuItem.Click += new System.EventHandler(this.naturalidadeToolStripMenuItem_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(283, 28);
+            this.panel1.TabIndex = 2;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Chocolate;
-            this.ClientSize = new System.Drawing.Size(283, 215);
+            this.ClientSize = new System.Drawing.Size(283, 184);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Name = "frmPrincipal";
@@ -91,5 +101,6 @@
         private System.Windows.Forms.ToolStripMenuItem funcionáriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nacionalidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem naturalidadeToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
     }
 }

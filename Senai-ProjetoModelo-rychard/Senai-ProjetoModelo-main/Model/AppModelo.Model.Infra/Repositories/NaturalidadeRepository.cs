@@ -24,14 +24,21 @@ namespace AppModelo.Model.Infra.Repositories
             return resultado > 0;
         }
 
-        public bool Atualizar()
+
+        public bool Atualizar(string descricao, int id)
         {
-            return false;
+            var sql = $"UPDATE naturalidade SET Descricao = '{descricao}' WHERE Id = {id}";
+            using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
+            var resultado = conexaoBd.Execute(sql);
+            return resultado > 0;
         }
 
-        public bool Remover()
+        public bool Remover(int id)
         {
-            return false;
+            var sql = $" DELETE FROM naturalidade WHERE Id = {id}";
+            using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
+            var resultado = conexaoBd.Execute(sql);
+            return resultado > 0;
         }
 
         public IEnumerable<NaturalidadeEntity> ObterTodosAtivos()

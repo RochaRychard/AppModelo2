@@ -30,7 +30,7 @@ namespace AppModelo.view.Windows.Cadastros
             else
             {
                 
-                var salvou = _naturalidadeController.Cadastrar(txtDescricaoNaturalidade.Text, chkStatus.Checked);
+                var salvou = _naturalidadeController.Cadastrar(txtDescricaoNaturalidade.Text.ToUpper(), chkStatus.Checked);
                 if (salvou)
                 {
                     MessageBox.Show("Naturalidade incluída com sucesso!");
@@ -43,11 +43,40 @@ namespace AppModelo.view.Windows.Cadastros
                 
 
             }
-            var controler = new NaturalidadeController();
-            var descricaoMaiuscula = txtDescricaoNaturalidade.Text.ToUpper();
+           
+        }
 
-            var resposta = controler.Cadastrar(descricaoMaiuscula, chkStatus.Checked);
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            var numero = int.Parse(txtIdNaturalidade.Text);
+            var atualizou = _naturalidadeController.Atualizar(txtDescricaoNaturalidade.Text.ToUpper(), numero);
+            if (atualizou)
+            {
+                MessageBox.Show("Naturalidade atualizada com sucesso!");
+                txtDescricaoNaturalidade.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Houve um erro ao atualizar no banco de dados!");
+            }
+
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            var numero = int.Parse(txtIdNaturalidade.Text);
+            var removeu = _naturalidadeController.Remover(numero);
+            if (removeu)
+            {
+                MessageBox.Show("Naturalidade removidada com sucesso!");
+                txtDescricaoNaturalidade.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Houve um erro ao remover do banco de dados!");
+            }
         }
     }
+    
 }
 

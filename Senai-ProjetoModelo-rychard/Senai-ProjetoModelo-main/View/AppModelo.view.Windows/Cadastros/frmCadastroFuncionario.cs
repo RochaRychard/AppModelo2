@@ -122,6 +122,8 @@ namespace AppModelo.view.Windows.Cadastros
                 MessageBox.Show("Erro ao cadastrar Funcionário!");
             }
         }
+
+       
     }
 }
 
