@@ -68,6 +68,7 @@
             this.txtDescricaoNacionalidade.Name = "txtDescricaoNacionalidade";
             this.txtDescricaoNacionalidade.Size = new System.Drawing.Size(161, 20);
             this.txtDescricaoNacionalidade.TabIndex = 2;
+            this.txtDescricaoNacionalidade.TextChanged += new System.EventHandler(this.txtDescricaoNacionalidade_TextChanged);
             // 
             // txtId
             // 

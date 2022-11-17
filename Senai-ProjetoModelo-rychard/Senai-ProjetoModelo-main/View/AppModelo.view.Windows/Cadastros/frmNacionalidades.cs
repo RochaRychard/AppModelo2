@@ -1,6 +1,6 @@
 ﻿using AppModelo.Controller.Cadastros;
 using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace AppModelo.view.Windows.Cadastros
@@ -12,13 +12,14 @@ namespace AppModelo.view.Windows.Cadastros
         public frmNacionalidades()
         {
             InitializeComponent();
+            btnSalvar.Enabled = false;
             var listaDeNacionalidades = _nacionalidadeController.ObterTodasNacionalidades();
             gvNacionalidades.DataSource = listaDeNacionalidades;
         }
 
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
             
             var temNumero = Helpers.Componentes.ExisteNumeroNoTexto(txtDescricaoNacionalidade.Text);
             if (temNumero)
@@ -28,11 +29,11 @@ namespace AppModelo.view.Windows.Cadastros
                 return;
             }
             else
-            { 
-
+            {
+                
                 var salvou = _nacionalidadeController.Cadastrar(txtDescricaoNacionalidade.Text.ToUpper());
                 if (salvou)
-                {
+                {  
                     MessageBox.Show("Nacionalidade incluída com sucesso!");
                     txtDescricaoNacionalidade.Text = string.Empty;
                 }
@@ -53,9 +54,11 @@ namespace AppModelo.view.Windows.Cadastros
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             var numero = int.Parse(txtId.Text);
+            var listaAtualizada = _nacionalidadeController.ObterTodasNacionalidades();
             var atualizou = _nacionalidadeController.Atualizar(txtDescricaoNacionalidade.Text.ToUpper(), numero);
             if (atualizou)
             {
+                gvNacionalidades.DataSource = listaAtualizada;
                 MessageBox.Show("Nacionalidade atualizada com sucesso!");
                 txtDescricaoNacionalidade.Text = string.Empty;
             }
@@ -80,5 +83,20 @@ namespace AppModelo.view.Windows.Cadastros
                 MessageBox.Show("Houve um erro ao remover do banco de dados!");
             }
         }
+
+        private void txtDescricaoNacionalidade_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDescricaoNacionalidade.Text != string.Empty)
+            {
+                btnSalvar.Enabled = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtDescricaoNacionalidade, "Preencher o campo Descrição!");
+                txtDescricaoNacionalidade.Focus();
+                btnSalvar.Enabled = false;
+            }
+        }
     }
+    
 }

@@ -12,6 +12,7 @@ namespace AppModelo.view.Windows.Cadastros
         public frmNaturalidade()
         {
             InitializeComponent();
+            btnSalvarDescricaoNaturalidade.Enabled = false;
             var listaDeNaturalidade = _naturalidadeController.ObterTodasNaturalidades();
             dgNaturalidade.DataSource = listaDeNaturalidade;
         }
@@ -74,6 +75,20 @@ namespace AppModelo.view.Windows.Cadastros
             else
             {
                 MessageBox.Show("Houve um erro ao remover do banco de dados!");
+            }
+        }
+
+        private void txtDescricaoNaturalidade_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDescricaoNaturalidade.Text != string.Empty)
+            {
+                btnSalvarDescricaoNaturalidade.Enabled = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtDescricaoNaturalidade, "Preencher o campo Descrição!");
+                txtDescricaoNaturalidade.Focus();
+                btnSalvarDescricaoNaturalidade.Enabled = false;
             }
         }
     }

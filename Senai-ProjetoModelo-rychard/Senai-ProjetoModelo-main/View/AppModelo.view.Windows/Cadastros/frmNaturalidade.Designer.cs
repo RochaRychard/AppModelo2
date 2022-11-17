@@ -93,6 +93,7 @@
             this.txtDescricaoNaturalidade.Name = "txtDescricaoNaturalidade";
             this.txtDescricaoNaturalidade.Size = new System.Drawing.Size(191, 20);
             this.txtDescricaoNaturalidade.TabIndex = 7;
+            this.txtDescricaoNaturalidade.TextChanged += new System.EventHandler(this.txtDescricaoNaturalidade_TextChanged);
             // 
             // chkStatus
             // 
