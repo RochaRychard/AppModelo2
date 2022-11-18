@@ -46,5 +46,16 @@ namespace AppModelo.Controller.Seguranca
             var emailEnviado = emailService.EnviarEmail(usuario.Nome, usuario.Email, "Recuperação de senha", mensagemhtml);
             return "";
         }
+
+        public bool CadastrarLogin(string usuario, string senha)
+        {
+            
+            var repositorio = new UsuarioRepository();
+       
+            var resposta = repositorio.Inserir(usuario, senha);
+            return resposta;
+
+
+        }
     }
 }

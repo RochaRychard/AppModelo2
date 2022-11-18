@@ -1,9 +1,6 @@
 ﻿using AppModelo.Model.Domain.Entities;
 using AppModelo.Model.Infra.Repositories;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Deployment.Internal;
-using System.Runtime.Remoting.Messaging;
 
 namespace AppModelo.Controller.Cadastros
 {

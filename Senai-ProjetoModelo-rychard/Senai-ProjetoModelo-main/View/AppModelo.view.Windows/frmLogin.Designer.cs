@@ -33,11 +33,12 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnEntrar = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.lblEsqueciMinhaSenha = new System.Windows.Forms.Label();
             this.lblSuporteEContato = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnCadastrarLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,15 +75,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Senha";
             // 
-            // btnEntrar
+            // btnLogin
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(15, 218);
-            this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(251, 23);
-            this.btnEntrar.TabIndex = 4;
-            this.btnEntrar.Text = "Entrar";
-            this.btnEntrar.UseVisualStyleBackColor = true;
-            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            this.btnLogin.Location = new System.Drawing.Point(15, 266);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(251, 23);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // lblEsqueciMinhaSenha
             // 
@@ -97,7 +98,7 @@
             // lblSuporteEContato
             // 
             this.lblSuporteEContato.AutoSize = true;
-            this.lblSuporteEContato.Location = new System.Drawing.Point(97, 274);
+            this.lblSuporteEContato.Location = new System.Drawing.Point(95, 301);
             this.lblSuporteEContato.Name = "lblSuporteEContato";
             this.lblSuporteEContato.Size = new System.Drawing.Size(93, 13);
             this.lblSuporteEContato.TabIndex = 6;
@@ -116,15 +117,26 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnCadastrarLogin
+            // 
+            this.btnCadastrarLogin.Location = new System.Drawing.Point(15, 211);
+            this.btnCadastrarLogin.Name = "btnCadastrarLogin";
+            this.btnCadastrarLogin.Size = new System.Drawing.Size(251, 23);
+            this.btnCadastrarLogin.TabIndex = 8;
+            this.btnCadastrarLogin.Text = "Cadastrar";
+            this.btnCadastrarLogin.UseVisualStyleBackColor = true;
+            this.btnCadastrarLogin.Click += new System.EventHandler(this.btnCadastrarLogin_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 305);
+            this.ClientSize = new System.Drawing.Size(308, 323);
+            this.Controls.Add(this.btnCadastrarLogin);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblSuporteEContato);
             this.Controls.Add(this.lblEsqueciMinhaSenha);
-            this.Controls.Add(this.btnEntrar);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEmail);
@@ -143,10 +155,11 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnEntrar;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblEsqueciMinhaSenha;
         private System.Windows.Forms.Label lblSuporteEContato;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnCadastrarLogin;
     }
 }

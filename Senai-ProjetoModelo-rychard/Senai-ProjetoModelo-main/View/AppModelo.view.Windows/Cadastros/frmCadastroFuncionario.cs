@@ -26,6 +26,11 @@ namespace AppModelo.view.Windows.Cadastros
 
         }
 
+        /// <summary>
+        /// Evento para pesquisa de cep
+        /// </summary>
+        /// <param object="sender"></param>
+        /// <param EventArgs="e"></param>
         private void btnPesquisarCep_Click(object sender, EventArgs e)
         {
             //CRIA A INSTÂNCIA DO CONTROLADOR
@@ -39,7 +44,11 @@ namespace AppModelo.view.Windows.Cadastros
             txtEnderecoMunicipio.Text = endereco.Localidade;
             txtEnderecoUf.Text = endereco.Uf;
         }
-        //VALIDAÇÃO DE ERRO NO CAMPO DE NOME
+        /// <summary>
+        /// VALIDAÇÃO DE ERRO NO CAMPO DE NOME
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtNome_Validating(object sender, CancelEventArgs e)
         {
             //VERIFICA SE A QUANTIDADE DE LETRAS ESTÁ CORRETA
@@ -61,6 +70,11 @@ namespace AppModelo.view.Windows.Cadastros
             errorProvider.Clear();
         }
 
+        /// <summary>
+        /// VALIDAÇÃO DE ERRO NO CAMPO DE CPF
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtCpf_Validating(object sender, CancelEventArgs e)
         {
             var cpf = txtCpf.Text;
@@ -73,6 +87,11 @@ namespace AppModelo.view.Windows.Cadastros
             errorProvider.Clear();
         }
 
+        /// <summary>
+        /// VALIDAÇÃO DE ERRO NO CAMPO DE EMAIL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
             var email = txtEmail.Text;
@@ -86,6 +105,11 @@ namespace AppModelo.view.Windows.Cadastros
             errorProvider.Clear();
         }
 
+        /// <summary>
+        /// VALIDAÇÃO DE ERRO NO CAMPO DE DATA DE NASCIMENTO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtDataNascimento_Validated(object sender, EventArgs e)
         {
             var dataNascimento = Convert.ToDateTime(txtDataNascimento.Text);
@@ -99,6 +123,11 @@ namespace AppModelo.view.Windows.Cadastros
             errorProvider.Clear();
         }
 
+        /// <summary>
+        /// Evento para cadastrar funcionário 
+        /// </summary>
+        /// <param object="sender"></param>
+        /// <param EventArgs="e"></param>
         private void btnCadastrarFuncionario_Click(object sender, EventArgs e)
 
         {

@@ -52,13 +52,14 @@ namespace AppModelo.view.Windows.Cadastros
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
-        {
-            var numero = int.Parse(txtId.Text);
+        {   
+            
+            int numero = int.Parse(txtId.Text);
             var listaAtualizada = _nacionalidadeController.ObterTodasNacionalidades();
             var atualizou = _nacionalidadeController.Atualizar(txtDescricaoNacionalidade.Text.ToUpper(), numero);
             if (atualizou)
             {
-                gvNacionalidades.DataSource = listaAtualizada;
+                
                 MessageBox.Show("Nacionalidade atualizada com sucesso!");
                 txtDescricaoNacionalidade.Text = string.Empty;
             }
@@ -66,6 +67,8 @@ namespace AppModelo.view.Windows.Cadastros
             {
                 MessageBox.Show("Houve um erro ao atualizar no banco de dados!");
             }
+
+            gvNacionalidades.DataSource = listaAtualizada;
 
         }
 
