@@ -1,5 +1,4 @@
-﻿using AppModelo.Controller.Cadastros;
-using AppModelo.Controller.Seguranca;
+﻿using AppModelo.Controller.Seguranca;
 using AppModelo.Model.Domain.Validator;
 using AppModelo.view.Windows.Cadastros;
 using System.Windows.Forms;

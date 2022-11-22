@@ -6,6 +6,12 @@ namespace AppModelo.Controller.Seguranca
 {
     public class UsuarioController
     {
+        /// <summary>
+        /// MÉTODO RESPONSÁVEL POR EFETUAR O LOGIN DE USUÁRIO
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
         public bool EfetuarLogin(string usuario, string senha)
         {
             var repositorio = new UsuarioRepository();
@@ -21,6 +27,12 @@ namespace AppModelo.Controller.Seguranca
             }
 
         }
+
+        /// <summary>
+        /// MÉTODO RESPONSÁVEL POR RECUPERAR O LOGIN DE USUÁRIO
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public string RecuperarSenha(string email)
         {
             // 1 - VERIFICAR SE UM EMAIL É DE UM USUÁRIO
@@ -38,7 +50,7 @@ namespace AppModelo.Controller.Seguranca
                 return "Erro ao recuperar senha, tente mais tarde!";
             }
 
-            // 3 - MANDAR A NOVA NOVA SENHA PARA O EMAIL
+            // 3 - MANDAR A NOVA SENHA PARA O EMAIL
             var emailService = new EmailService();
             var mensagemhtml = @"<p><b>Criamos uma nova senha para você! </p></b>
                                  <p>Sua nova senha é: <b>" + novaSenha + "</b></p>";
@@ -47,6 +59,12 @@ namespace AppModelo.Controller.Seguranca
             return "";
         }
 
+        /// <summary>
+        /// MÉTODO RESPONSÁVEL POR CADASTRAR NOVO USUÁRIO
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
         public bool CadastrarLogin(string usuario, string senha)
         {
             

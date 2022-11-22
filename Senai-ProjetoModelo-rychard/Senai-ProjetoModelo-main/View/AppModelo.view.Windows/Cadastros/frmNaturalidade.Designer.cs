@@ -68,6 +68,7 @@
             this.txtIdNaturalidade.Name = "txtIdNaturalidade";
             this.txtIdNaturalidade.Size = new System.Drawing.Size(52, 20);
             this.txtIdNaturalidade.TabIndex = 5;
+           
             // 
             // label2
             // 

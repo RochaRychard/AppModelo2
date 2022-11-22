@@ -1,7 +1,6 @@
 ﻿using AppModelo.Model.Domain.Entities;
 using Dapper;
 using MySql.Data.MySqlClient;
-using System;
 using System.Data;
 
 namespace AppModelo.Model.Infra.Repositories

@@ -43,7 +43,7 @@ namespace AppModelo.Model.Infra.Repositories
 
         public IEnumerable<NaturalidadeEntity> ObterTodosAtivos()
         {
-            var sql = "SELECT Id, Descricao FROM naturalidade WHERE ativo = true";
+            var sql = $"SELECT Id, Descricao FROM naturalidade WHERE ativo = {true}";
             
             using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
 
@@ -60,7 +60,7 @@ namespace AppModelo.Model.Infra.Repositories
         public NaturalidadeEntity ObterPorDescricao(string descricao)
         {
             //STRING INTERPOLATION
-            var sql = $"SELECT Id, Descricao FROM naturalidade WHERE Descricao = '{descricao}' "; 
+            var sql = $"SELECT Id, Descricao FROM naturalidade WHERE Descricao = {descricao}"; 
 
 
             using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());

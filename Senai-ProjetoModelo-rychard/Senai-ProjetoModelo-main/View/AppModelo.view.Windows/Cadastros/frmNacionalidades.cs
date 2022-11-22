@@ -52,24 +52,40 @@ namespace AppModelo.view.Windows.Cadastros
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
-        {   
-            
-            int numero = int.Parse(txtId.Text);
-            var listaAtualizada = _nacionalidadeController.ObterTodasNacionalidades();
-            var atualizou = _nacionalidadeController.Atualizar(txtDescricaoNacionalidade.Text.ToUpper(), numero);
-            if (atualizou)
+        {
+
+            if (txtDescricaoNacionalidade.Text == string.Empty && txtId.Text != string.Empty)
             {
-                
-                MessageBox.Show("Nacionalidade atualizada com sucesso!");
-                txtDescricaoNacionalidade.Text = string.Empty;
+                errorProvider1.SetError(txtDescricaoNacionalidade, "Preencher o campo Descrição!");
+                return;
+            }
+
+
+            if (txtDescricaoNacionalidade.Text == string.Empty &&
+                txtId.Text == string.Empty)
+            {
+
+                var listaDeNacionalidades = _nacionalidadeController.ObterTodasNacionalidades();
+                gvNacionalidades.DataSource = listaDeNacionalidades;
             }
             else
             {
-                MessageBox.Show("Houve um erro ao atualizar no banco de dados!");
+                int numero = int.Parse(txtId.Text);
+                var listaAtualizada = _nacionalidadeController.ObterTodasNacionalidades();
+                var atualizou = _nacionalidadeController.Atualizar(txtDescricaoNacionalidade.Text.ToUpper(), numero);
+                if (atualizou)
+                {
+
+                    MessageBox.Show("Nacionalidade atualizada com sucesso!");
+                    txtDescricaoNacionalidade.Text = string.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("Houve um erro ao atualizar no banco de dados!");
+                }
+
+                gvNacionalidades.DataSource = listaAtualizada;
             }
-
-            gvNacionalidades.DataSource = listaAtualizada;
-
         }
 
         private void btnRemover_Click(object sender, EventArgs e)

@@ -19,7 +19,7 @@ namespace AppModelo.view.Windows.Helpers
                     {
                         case TextBox box:
                             {
-                                if (box.Tag == "Obrigatório")
+                                if (box.Tag == "Obrigatorio")
                                 {
                                     box.BackColor = Color.LightGoldenrodYellow;
                                 }
@@ -27,7 +27,7 @@ namespace AppModelo.view.Windows.Helpers
                             }
                         case MaskedTextBox box:
                             {
-                                if (box.Tag == "Obrigatório")
+                                if (box.Tag == "Obrigatorio")
                                 {
                                     box.BackColor = Color.LightGoldenrodYellow;
                                 }
@@ -35,7 +35,7 @@ namespace AppModelo.view.Windows.Helpers
                             }
                         case ComboBox box:
                             {
-                                if (box.Tag == "Obrigatório")
+                                if (box.Tag == "Obrigatorio")
                                 {
                                     box.BackColor = Color.LightGoldenrodYellow;
                                 }

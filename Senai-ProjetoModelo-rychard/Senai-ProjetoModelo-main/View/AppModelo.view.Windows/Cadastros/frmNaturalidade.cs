@@ -49,18 +49,35 @@ namespace AppModelo.view.Windows.Cadastros
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            var numero = int.Parse(txtIdNaturalidade.Text);
-            var atualizou = _naturalidadeController.Atualizar(txtDescricaoNaturalidade.Text.ToUpper(), numero);
-            if (atualizou)
+            if (txtDescricaoNaturalidade.Text == string.Empty && txtIdNaturalidade.Text != string.Empty)
             {
-                MessageBox.Show("Naturalidade atualizada com sucesso!");
-                txtDescricaoNaturalidade.Text = string.Empty;
+                errorProvider1.SetError(txtDescricaoNaturalidade, "Preencher o campo Descrição!");
+                return;
+            }
+
+
+
+            if (txtDescricaoNaturalidade.Text == string.Empty &&
+                txtIdNaturalidade.Text == string.Empty)
+            {
+               
+                var listaDeNaturalidade = _naturalidadeController.ObterTodasNaturalidades();
+                dgNaturalidade.DataSource = listaDeNaturalidade;
             }
             else
             {
-                MessageBox.Show("Houve um erro ao atualizar no banco de dados!");
+                var numero = int.Parse(txtIdNaturalidade.Text);
+                var atualizou = _naturalidadeController.Atualizar(txtDescricaoNaturalidade.Text.ToUpper(), numero);
+                if (atualizou)
+                {
+                    MessageBox.Show("Naturalidade atualizada com sucesso!");
+                    txtDescricaoNaturalidade.Text = string.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("Houve um erro ao atualizar no banco de dados!");
+                }
             }
-
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -91,7 +108,7 @@ namespace AppModelo.view.Windows.Cadastros
                 btnSalvarDescricaoNaturalidade.Enabled = false;
             }
         }
-    }
-    
+
+    }   
 }
 
