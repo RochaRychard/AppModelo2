@@ -27,5 +27,11 @@ namespace AppModelo.view.Windows.Cadastros
             var form = new frmCadastroFuncionario();
             form.Show();
         }
+
+        private void painelDeFuncionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new frmPainelDeFuncionarios();
+            form.Show();
+        }
     }
 }

@@ -19,10 +19,11 @@ namespace AppModelo.view.Windows.Cadastros
             Componentes.FormatarCamposObrigatorios(this);
             cmbNacionalidade.DataSource = _nacionalidadeController.ObterTodasNacionalidades();
             cmbNacionalidade.DisplayMember = "Descricao";
+            cmbNacionalidade.ValueMember = "id";
 
             cmbNaturalidade.DataSource = _naturalidadeController.ObterTodasNaturalidades();
             cmbNaturalidade.DisplayMember = "Descricao";
-
+            cmbNaturalidade.ValueMember = "id";
 
         }
 
@@ -134,11 +135,13 @@ namespace AppModelo.view.Windows.Cadastros
             var Data_Nascimento = Convert.ToDateTime(txtDataNascimento.Text);
 
             var Numero = int.Parse(txtEnderecoNumero.Text);
-            var nacionalidade = cmbNacionalidade.SelectedIndex;
-            var naturalidade = cmbNaturalidade.SelectedIndex;
+            var nac = cmbNacionalidade.SelectedValue;
+            var nat = cmbNaturalidade.SelectedValue;
+            int nacionalidade = Convert.ToInt32(nac); 
+            int naturalidade = Convert.ToInt32(nat);
 
             var salvou = _funcionarioController.Cadastrar(txtNome.Text, Data_Nascimento,
-                rbMasculino.Checked, nacionalidade, naturalidade, txtEmail.Text, txtTelefone.Text,
+                rbMasculino.Checked, txtCpf.Text, nacionalidade, naturalidade, txtEmail.Text, txtTelefone.Text,
                 txtTelefoneContato.Text, txtEnderecoCep.Text, txtEnderecoLogradouro.Text, Numero, txtEnderecoComplemento.Text,
                 txtEnderecoBairro.Text, txtEnderecoMunicipio.Text, txtEnderecoUf.Text);
 

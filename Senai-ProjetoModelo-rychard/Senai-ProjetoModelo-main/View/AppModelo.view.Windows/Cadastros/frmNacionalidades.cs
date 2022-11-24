@@ -14,7 +14,7 @@ namespace AppModelo.view.Windows.Cadastros
             InitializeComponent();
             btnSalvar.Enabled = false;
             var listaDeNacionalidades = _nacionalidadeController.ObterTodasNacionalidades();
-            gvNacionalidades.DataSource = listaDeNacionalidades;
+            dgNacionalidades.DataSource = listaDeNacionalidades;
         }
 
 
@@ -66,7 +66,7 @@ namespace AppModelo.view.Windows.Cadastros
             {
 
                 var listaDeNacionalidades = _nacionalidadeController.ObterTodasNacionalidades();
-                gvNacionalidades.DataSource = listaDeNacionalidades;
+                dgNacionalidades.DataSource = listaDeNacionalidades;
             }
             else
             {
@@ -84,7 +84,7 @@ namespace AppModelo.view.Windows.Cadastros
                     MessageBox.Show("Houve um erro ao atualizar no banco de dados!");
                 }
 
-                gvNacionalidades.DataSource = listaAtualizada;
+                dgNacionalidades.DataSource = listaAtualizada;
             }
         }
 

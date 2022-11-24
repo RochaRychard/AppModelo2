@@ -59,6 +59,12 @@
     <Compile Include="Cadastros\frmNacionalidades.Designer.cs">
       <DependentUpon>frmNacionalidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cadastros\frmPainelDeFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmPainelDeFuncionarios.Designer.cs">
+      <DependentUpon>frmPainelDeFuncionarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cadastros\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\frmNacionalidades.resx">
       <DependentUpon>frmNacionalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmPainelDeFuncionarios.resx">
+      <DependentUpon>frmPainelDeFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
