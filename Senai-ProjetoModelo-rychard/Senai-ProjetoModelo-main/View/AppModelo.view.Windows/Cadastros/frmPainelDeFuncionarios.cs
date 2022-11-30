@@ -39,13 +39,41 @@ namespace AppModelo.view.Windows.Cadastros
             dgPainelDeFuncionarios.Columns[4].Visible = false;
             dgPainelDeFuncionarios.Columns[5].Visible = false;
             dgPainelDeFuncionarios.Columns[6].Visible = false;
-            dgPainelDeFuncionarios.Columns[1].Visible = false;
-            dgPainelDeFuncionarios.Columns[1].Visible = false;
-            dgPainelDeFuncionarios.Columns[1].Visible = false;
-            dgPainelDeFuncionarios.Columns[1].Visible = false;
-            dgPainelDeFuncionarios.Columns[1].Visible = false;
-            dgPainelDeFuncionarios.Columns[1].Visible = false;
-            dgPainelDeFuncionarios.Columns[1].Visible = false;
+            dgPainelDeFuncionarios.Columns[9].Visible = false;
+            dgPainelDeFuncionarios.Columns[10].Visible = false;
+            dgPainelDeFuncionarios.Columns[11].Visible = false;
+            dgPainelDeFuncionarios.Columns[12].Visible = false;
+            dgPainelDeFuncionarios.Columns[13].Visible = false;
+            dgPainelDeFuncionarios.Columns[14].Visible = false;
+            
+        }
+
+        private void btnExcluirFuncionario_Click(object sender, System.EventArgs e)
+        {
+            if (txtIdFuncionario.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtIdFuncionario, "Preencher o campo descrição!");
+                return;
+            }
+
+            var numero = int.Parse(txtIdFuncionario.Text);
+            var removeu = _funcionarioController.Remover(numero);
+            if (removeu)
+            {
+                MessageBox.Show("Funcionário removido com sucesso!");
+                
+            }
+            else
+            {
+                MessageBox.Show("Houve um erro ao remover do banco de dados!");
+            }
+        }
+
+        private void btnAtualizarPainelFuncionario_Click(object sender, System.EventArgs e)
+        {
+            var listaDeFuncionarios = _funcionarioController.ObterFuncionarios();
+            dgPainelDeFuncionarios.DataSource = listaDeFuncionarios;
+            gerirDataDridView();
         }
     }
 }

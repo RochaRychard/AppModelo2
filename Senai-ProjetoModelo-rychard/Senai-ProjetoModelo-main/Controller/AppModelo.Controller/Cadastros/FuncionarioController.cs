@@ -23,6 +23,13 @@ namespace AppModelo.Controller.Cadastros
             return resposta;
         }
 
+        public bool Remover(int id)
+        {
+            var repositorio = new FuncionarioRepository();
+            var remover = repositorio.Remover(id);
+            return remover;
+        }
+
         public IEnumerable<FuncionarioEntity> ObterTodasNacionalidades()
         {
             var repositorio = new FuncionarioRepository();

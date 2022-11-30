@@ -56,7 +56,7 @@ namespace AppModelo.view.Windows.Cadastros
 
             if (txtDescricaoNacionalidade.Text == string.Empty && txtId.Text != string.Empty)
             {
-                errorProvider1.SetError(txtDescricaoNacionalidade, "Preencher o campo Descrição!");
+                errorProvider1.SetError(txtDescricaoNacionalidade, "Preencher o campo descrição!");
                 return;
             }
 

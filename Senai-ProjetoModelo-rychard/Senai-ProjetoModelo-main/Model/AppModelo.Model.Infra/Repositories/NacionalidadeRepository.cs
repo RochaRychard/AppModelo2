@@ -34,7 +34,7 @@ namespace AppModelo.Model.Infra.Repositories
         }
 
         public bool Remover(int id) 
-         {
+        {
             var sql = $" DELETE FROM nacionalidades WHERE Id = {id}";
             using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
             var resultado = conexaoBd.Execute(sql);

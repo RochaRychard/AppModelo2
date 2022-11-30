@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNacionalidades));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescricaoNacionalidade = new System.Windows.Forms.TextBox();
@@ -155,6 +156,7 @@
             this.Controls.Add(this.txtDescricaoNacionalidade);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNacionalidades";
             this.Text = "frmNacionalidades";
             ((System.ComponentModel.ISupportInitialize)(this.dgNacionalidades)).EndInit();

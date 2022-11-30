@@ -50,6 +50,15 @@ namespace AppModelo.view.Windows
 
         private void btnCadastrarLogin_Click(object sender, System.EventArgs e)
         {
+            var email = txtEmail.Text;
+            var emailEhValido = Validadores.EmailEValido(email);
+            if (emailEhValido is false)
+            {
+                errorProvider1.SetError(txtEmail, "Email Inválido!");
+                txtEmail.Focus();
+                return;
+            }
+            errorProvider1.Clear();
 
             var temNumero = Helpers.Componentes.ExisteNumeroNoTexto(txtEmail.Text);
             if (temNumero)

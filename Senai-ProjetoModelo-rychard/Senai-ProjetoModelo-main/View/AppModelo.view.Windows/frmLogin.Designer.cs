@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
@@ -77,12 +78,13 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(15, 266);
+            this.btnLogin.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnLogin.Location = new System.Drawing.Point(15, 208);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(251, 23);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // lblEsqueciMinhaSenha
@@ -119,12 +121,13 @@
             // 
             // btnCadastrarLogin
             // 
-            this.btnCadastrarLogin.Location = new System.Drawing.Point(15, 211);
+            this.btnCadastrarLogin.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnCadastrarLogin.Location = new System.Drawing.Point(15, 260);
             this.btnCadastrarLogin.Name = "btnCadastrarLogin";
             this.btnCadastrarLogin.Size = new System.Drawing.Size(251, 23);
             this.btnCadastrarLogin.TabIndex = 8;
             this.btnCadastrarLogin.Text = "Cadastrar";
-            this.btnCadastrarLogin.UseVisualStyleBackColor = true;
+            this.btnCadastrarLogin.UseVisualStyleBackColor = false;
             this.btnCadastrarLogin.Click += new System.EventHandler(this.btnCadastrarLogin_Click);
             // 
             // frmLogin
@@ -141,6 +144,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.Text = "frmLogin";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

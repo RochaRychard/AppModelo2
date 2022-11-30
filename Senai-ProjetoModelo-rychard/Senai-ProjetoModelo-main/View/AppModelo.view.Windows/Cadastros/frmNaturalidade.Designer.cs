@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNaturalidade));
             this.dgNaturalidade = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtIdNaturalidade = new System.Windows.Forms.TextBox();
@@ -68,7 +69,6 @@
             this.txtIdNaturalidade.Name = "txtIdNaturalidade";
             this.txtIdNaturalidade.Size = new System.Drawing.Size(52, 20);
             this.txtIdNaturalidade.TabIndex = 5;
-           
             // 
             // label2
             // 
@@ -155,6 +155,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgNaturalidade);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNaturalidade";
             this.Text = "Naturalidade";
             ((System.ComponentModel.ISupportInitialize)(this.dgNaturalidade)).EndInit();

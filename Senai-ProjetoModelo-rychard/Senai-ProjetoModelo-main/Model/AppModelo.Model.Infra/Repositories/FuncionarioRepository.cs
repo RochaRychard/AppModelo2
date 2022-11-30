@@ -31,6 +31,22 @@ namespace AppModelo.Model.Infra.Repositories
             return resultado > 0;
         }
 
+        public bool Remover(int id)
+        {
+            var sql = $" DELETE FROM funcionarios WHERE Id = {id}";
+            using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
+            var resultado = conexaoBd.Execute(sql);
+            return resultado > 0;
+        }
+
+        public bool Atualizar(string descricao, int id)
+        {
+            var sql = $"UPDATE naturalidade SET Descricao = '{descricao}' WHERE Id = {id}";
+            using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
+            var resultado = conexaoBd.Execute(sql);
+            return resultado > 0;
+        }
+
 
         public IEnumerable<FuncionarioEntity> ObterTodos()
         {

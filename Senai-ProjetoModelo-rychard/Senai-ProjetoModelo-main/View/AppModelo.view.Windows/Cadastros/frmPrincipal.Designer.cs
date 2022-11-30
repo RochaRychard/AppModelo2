@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nacionalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.naturalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.painelDeFuncionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +72,13 @@
             this.naturalidadeToolStripMenuItem.Text = "Cadastrar Naturalidades";
             this.naturalidadeToolStripMenuItem.Click += new System.EventHandler(this.naturalidadeToolStripMenuItem_Click);
             // 
+            // painelDeFuncionáriosToolStripMenuItem
+            // 
+            this.painelDeFuncionáriosToolStripMenuItem.Name = "painelDeFuncionáriosToolStripMenuItem";
+            this.painelDeFuncionáriosToolStripMenuItem.Size = new System.Drawing.Size(138, 20);
+            this.painelDeFuncionáriosToolStripMenuItem.Text = "Painel de Funcionários";
+            this.painelDeFuncionáriosToolStripMenuItem.Click += new System.EventHandler(this.painelDeFuncionáriosToolStripMenuItem_Click);
+            // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -79,24 +87,22 @@
             this.panel1.Size = new System.Drawing.Size(661, 28);
             this.panel1.TabIndex = 2;
             // 
-            // painelDeFuncionáriosToolStripMenuItem
-            // 
-            this.painelDeFuncionáriosToolStripMenuItem.Name = "painelDeFuncionáriosToolStripMenuItem";
-            this.painelDeFuncionáriosToolStripMenuItem.Size = new System.Drawing.Size(138, 20);
-            this.painelDeFuncionáriosToolStripMenuItem.Text = "Painel de Funcionários";
-            this.painelDeFuncionáriosToolStripMenuItem.Click += new System.EventHandler(this.painelDeFuncionáriosToolStripMenuItem_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Chocolate;
-            this.ClientSize = new System.Drawing.Size(661, 327);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(661, 354);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "frmPrincipal";
             this.Text = "frmPrincipal";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
