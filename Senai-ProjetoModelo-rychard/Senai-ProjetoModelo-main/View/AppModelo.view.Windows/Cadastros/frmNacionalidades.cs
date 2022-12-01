@@ -17,7 +17,11 @@ namespace AppModelo.view.Windows.Cadastros
             dgNacionalidades.DataSource = listaDeNacionalidades;
         }
 
-
+        /// <summary>
+        /// EVENTO QUE SALVA A NACIONALIDADE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             
@@ -51,6 +55,11 @@ namespace AppModelo.view.Windows.Cadastros
             
         }
 
+        /// <summary>
+        /// EVENTO QUE ATUALIZA NACIONALIDADE DO FORMULÁRIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
 
@@ -88,6 +97,11 @@ namespace AppModelo.view.Windows.Cadastros
             }
         }
 
+        /// <summary>
+        /// EVENTO QUE REMOVE A NACIONALIDADE DO FORMULÁRIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRemover_Click(object sender, EventArgs e)
         {
             var numero = int.Parse(txtId.Text);

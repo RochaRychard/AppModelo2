@@ -7,6 +7,13 @@ namespace AppModelo.Controller.Cadastros
 {
     public class NaturalidadeController
     {
+
+        /// <summary>
+        /// MÉTODO RESPONSÁVEL POR CADASTRAR NOVA NATURALIDADE
+        /// </summary>
+        /// <param name="descricao"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
         public bool Cadastrar(string descricao,bool status)
         {
             var repositorio = new NaturalidadeRepository();
@@ -25,7 +32,12 @@ namespace AppModelo.Controller.Cadastros
             return (List<NaturalidadeEntity>)resposta;
         }
 
-
+        /// <summary>
+        /// MÉTODO RESPONSÁVEL POR ATUALIZAR TABELA DE NATURALIDADE
+        /// </summary>
+        /// <param name="descricao"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Atualizar(string descricao, int id)
         {
             var repositorio = new NaturalidadeRepository();
@@ -33,6 +45,11 @@ namespace AppModelo.Controller.Cadastros
             return atualizar;
         }
 
+        /// <summary>
+        /// MÉTODO RESPONSÁVEL POR REMOVER NATURALIDADE POR ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Remover(int id)
         {
             var repositorio = new NaturalidadeRepository();

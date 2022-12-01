@@ -11,6 +11,14 @@ namespace AppModelo.Model.Infra.Repositories
     {
         //CRUD - create - read - update- delete
         //       insert - select - update - delete
+
+
+        /// <summary>
+        /// MÉTODO PARA INSERIR A DESCRIÇÃO DA NATURALIDADE NO BANCO DE DADOS
+        /// </summary>
+        /// <param name="descricao"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
         public bool Inserir(string descricao, bool status)
         {
             //STRING INTERPOLATION
@@ -24,7 +32,12 @@ namespace AppModelo.Model.Infra.Repositories
             return resultado > 0;
         }
 
-
+        /// <summary>
+        /// MÉTODO PARA ATUALIZAR NATURALIDADE NO BANCO DE DADOS
+        /// </summary>
+        /// <param name="descricao"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Atualizar(string descricao, int id)
         {
             var sql = $"UPDATE naturalidade SET Descricao = '{descricao}' WHERE Id = {id}";
@@ -33,6 +46,11 @@ namespace AppModelo.Model.Infra.Repositories
             return resultado > 0;
         }
 
+        /// <summary>
+        /// MÉTODO PARA REMOVER NATURALIDADE NO BANCO DE DADOS
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Remover(int id)
         {
             var sql = $" DELETE FROM naturalidade WHERE Id = {id}";
@@ -41,6 +59,10 @@ namespace AppModelo.Model.Infra.Repositories
             return resultado > 0;
         }
 
+        /// <summary>
+        /// OBTÉM TODOS IDs ATIVOS NO BANCO DE DADOS
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<NaturalidadeEntity> ObterTodosAtivos()
         {
             var sql = $"SELECT Id, Descricao FROM naturalidade WHERE ativo = {true}";
@@ -52,11 +74,19 @@ namespace AppModelo.Model.Infra.Repositories
             return resultado;
 
         }
+
+        
         public NaturalidadeEntity ObterPorId()
         {
             return new NaturalidadeEntity();
         }
 
+
+        /// <summary>
+        /// OBTÉM POR DESCRIÇÃO NO BANCO DE DADOS
+        /// </summary>
+        /// <param name="descricao"></param>
+        /// <returns></returns>
         public NaturalidadeEntity ObterPorDescricao(string descricao)
         {
             //STRING INTERPOLATION
@@ -69,6 +99,11 @@ namespace AppModelo.Model.Infra.Repositories
 
             return resultado;
         }
+
+        /// <summary>
+        /// OBTÉM POR ID NO BANCO DE DADOS
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<NaturalidadeEntity> ObterTodos()
         {
             var sql = "SELECT Id, Descricao FROM naturalidade ORDER BY descricao ASC";

@@ -11,6 +11,11 @@ namespace AppModelo.view.Windows
             InitializeComponent();
         }
 
+        /// <summary>
+        /// EVENTO PARA RECUPERAR SENHA DE ACESSO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRecuperarAcesso_Click(object sender, System.EventArgs e)
         {
             

@@ -2,13 +2,32 @@
 using AppModelo.Model.Infra.Repositories;
 using System;
 using System.Collections.Generic;
-using static AppModelo.Model.Domain.Validator.Validadores;
 
 namespace AppModelo.Controller.Cadastros
 {
     public class FuncionarioController
     {
 
+        /// <summary>
+        /// MÉTODO RESPONSÁVEL POR CADASTRAR NOVO FUNCIONÁRIO
+        /// </summary>
+        /// <param name="Nome"></param>
+        /// <param name="Data_Nascimento"></param>
+        /// <param name="Sexo"></param>
+        /// <param name="Cpf"></param>
+        /// <param name="Nacionalidade"></param>
+        /// <param name="Naturalidade"></param>
+        /// <param name="Email"></param>
+        /// <param name="Telefone"></param>
+        /// <param name="Telefone_Contato"></param>
+        /// <param name="Cep"></param>
+        /// <param name="Logradouro"></param>
+        /// <param name="Numero"></param>
+        /// <param name="Complemento"></param>
+        /// <param name="Bairro"></param>
+        /// <param name="Municipio"></param>
+        /// <param name="Uf"></param>
+        /// <returns></returns>
         public bool Cadastrar(string Nome, DateTime Data_Nascimento, bool Sexo, string Cpf,
             int Nacionalidade, int Naturalidade, string Email, string
             Telefone, string Telefone_Contato, string Cep, string Logradouro,
@@ -23,6 +42,12 @@ namespace AppModelo.Controller.Cadastros
             return resposta;
         }
 
+
+        /// <summary>
+        /// MÉTODO RESPONSÁVEL POR REMOVER FUNCIONÁRIO POR ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Remover(int id)
         {
             var repositorio = new FuncionarioRepository();

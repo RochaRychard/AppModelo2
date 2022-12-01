@@ -15,6 +15,11 @@ namespace AppModelo.view.Windows
             txtSenha.Text = "0000";
         }
 
+        /// <summary>
+        /// EVENTO PARA LOGIN
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEntrar_Click(object sender, System.EventArgs e)
         { 
             var email = txtEmail.Text;
@@ -42,12 +47,22 @@ namespace AppModelo.view.Windows
             }
         }
 
+        /// <summary>
+        /// EVENTO DE DE MUDANÇA DE TELA PARA RECUPERAÇÃO DE SENHA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblEsqueciMinhaSenha_Click(object sender, System.EventArgs e)
         {
             var form = new frmRecuperarSenha();
             form.ShowDialog();
         }
 
+        /// <summary>
+        /// EVENTO DE CADASTRO DE LOGIN
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCadastrarLogin_Click(object sender, System.EventArgs e)
         {
             var email = txtEmail.Text;

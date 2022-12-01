@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AppModelo.Model.Domain.Validator
+﻿namespace AppModelo.Model.Domain.Validator
 {
+
+    /// <summary>
+    /// MÉTODO PARA VALIDAR CPF
+    /// </summary>
     public static partial class Validadores
     {
         public struct Cpf

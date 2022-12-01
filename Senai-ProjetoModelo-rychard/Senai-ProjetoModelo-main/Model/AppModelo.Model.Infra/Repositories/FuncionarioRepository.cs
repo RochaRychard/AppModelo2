@@ -4,7 +4,6 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using static AppModelo.Model.Domain.Validator.Validadores;
 
 namespace AppModelo.Model.Infra.Repositories
 {
@@ -13,6 +12,28 @@ namespace AppModelo.Model.Infra.Repositories
 
         //CRUD - create - read - update- delete
         //       insert - select - update - delete
+
+
+        /// <summary>
+        /// MÉTODO PARA INSERIR TODOS OS DADOS DO FUNCIONÁRIO NO BANCO DE DADOS
+        /// </summary>
+        /// <param name="Nome"></param>
+        /// <param name="Data_Nascimento"></param>
+        /// <param name="Sexo"></param>
+        /// <param name="Cpf"></param>
+        /// <param name="Nacionalidade"></param>
+        /// <param name="Naturalidade"></param>
+        /// <param name="Email"></param>
+        /// <param name="Telefone"></param>
+        /// <param name="Telefone_Contato"></param>
+        /// <param name="Cep"></param>
+        /// <param name="Logradouro"></param>
+        /// <param name="Numero"></param>
+        /// <param name="Complemento"></param>
+        /// <param name="Bairro"></param>
+        /// <param name="Municipio"></param>
+        /// <param name="Uf"></param>
+        /// <returns></returns>
         public bool Inserir(string Nome, DateTime Data_Nascimento, bool Sexo, string Cpf, int Nacionalidade, int Naturalidade, string Email, string Telefone, string Telefone_Contato, string Cep, string Logradouro, int Numero, string Complemento, string Bairro, string Municipio, string Uf)
         {
             var dataConvertida = Data_Nascimento.ToString("yyyy-mm-dd");
@@ -31,6 +52,11 @@ namespace AppModelo.Model.Infra.Repositories
             return resultado > 0;
         }
 
+        /// <summary>
+        /// MÉTODO PARA REMOVER O FUNCIONÁRIO DO BANCO DE DADOS PELO ID 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Remover(int id)
         {
             var sql = $" DELETE FROM funcionarios WHERE Id = {id}";
@@ -39,6 +65,7 @@ namespace AppModelo.Model.Infra.Repositories
             return resultado > 0;
         }
 
+        
         public bool Atualizar(string descricao, int id)
         {
             var sql = $"UPDATE naturalidade SET Descricao = '{descricao}' WHERE Id = {id}";

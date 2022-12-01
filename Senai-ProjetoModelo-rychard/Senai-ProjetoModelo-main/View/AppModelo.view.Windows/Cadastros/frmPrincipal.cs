@@ -10,6 +10,11 @@ namespace AppModelo.view.Windows.Cadastros
             InitializeComponent();
         }
 
+        /// <summary>
+        /// EVENTO DE MUDANÇA DE TELA PARA O FORMULÁRIO DE CADASTRO DE NATURALIDADE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void naturalidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new frmNaturalidade();
@@ -17,6 +22,11 @@ namespace AppModelo.view.Windows.Cadastros
             form.Show();
         }
 
+        /// <summary>
+        /// EVENTO DE MUDANÇA DE TELA PARA O FORMULÁRIO DE CADASTRO DE NACIONALIDADE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void nacionalidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new frmNacionalidades();
@@ -24,6 +34,11 @@ namespace AppModelo.view.Windows.Cadastros
             form.Show();
         }
 
+        /// <summary>
+        /// EVENTO DE MUDANÇA DE TELA PARA O FORMULÁRIO DE CADASTRO DE FUNCIONÁRIOS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new frmCadastroFuncionario();
@@ -31,6 +46,11 @@ namespace AppModelo.view.Windows.Cadastros
             form.Show();
         }
 
+        /// <summary>
+        /// EVENTO DE MUDANÇA DE TELA PARA O PAINEL DE FUNCIONÁRIOS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void painelDeFuncionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new frmPainelDeFuncionarios();

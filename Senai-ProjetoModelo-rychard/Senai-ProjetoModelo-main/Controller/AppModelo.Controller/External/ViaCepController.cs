@@ -5,7 +5,11 @@ namespace AppModelo.Controller.External
 {
     public class ViaCepController
     {
-        //Retorna a classe ViaCepWrapper
+        /// <summary>
+        /// Retorna a classe ViaCepWrapper
+        /// </summary>
+        /// <param name="cep"></param>
+        /// <returns></returns>
         public ViaCepWrapper Obter(string cep)
         {
             var sevice = new ViaCepService();

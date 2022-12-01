@@ -6,6 +6,11 @@ namespace AppModelo.view.Windows.Helpers
 {
     internal static partial class Componentes
     {
+        /// <summary>
+        /// MÉTODO PARA FORMATAR OS CAMPOS OBRIGATÓRIO
+        /// DO FORMULÁRIO DE CADASTRO DE FUNCIONÁRIO
+        /// </summary>
+        /// <param name="frm"></param>
         internal static void FormatarCamposObrigatorios(Form frm)
         {
             Action<Control.ControlCollection> func = null;

@@ -17,6 +17,11 @@ namespace AppModelo.view.Windows.Cadastros
             dgNaturalidade.DataSource = listaDeNaturalidade;
         }
 
+        /// <summary>
+        /// EVENTO QUE SALVA A NATURALIDADE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSalvarDescricaoNaturalidade_Click(object sender, EventArgs e)
         {
            
@@ -47,6 +52,11 @@ namespace AppModelo.view.Windows.Cadastros
            
         }
 
+        /// <summary>
+        /// EVENTO QUE ATUALIZA NATURALIDADE DO FORMULÁRIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             if (txtDescricaoNaturalidade.Text == string.Empty && txtIdNaturalidade.Text != string.Empty)
@@ -80,6 +90,11 @@ namespace AppModelo.view.Windows.Cadastros
             }
         }
 
+        /// <summary>
+        /// EVENTO QUE REMOVE A NATURALIDADE DO FORMULÁRIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRemover_Click(object sender, EventArgs e)
         {
             var numero = int.Parse(txtIdNaturalidade.Text);
@@ -95,6 +110,7 @@ namespace AppModelo.view.Windows.Cadastros
             }
         }
 
+        
         private void txtDescricaoNaturalidade_TextChanged(object sender, EventArgs e)
         {
             if (txtDescricaoNaturalidade.Text != string.Empty)

@@ -25,6 +25,8 @@ namespace AppModelo.view.Windows.Cadastros
             cmbNaturalidade.DisplayMember = "Descricao";
             cmbNaturalidade.ValueMember = "id";
 
+            btnCadastrarFuncionario.Enabled = false;
+
         }
 
         /// <summary>
@@ -140,6 +142,9 @@ namespace AppModelo.view.Windows.Cadastros
             int nacionalidade = Convert.ToInt32(nac); 
             int naturalidade = Convert.ToInt32(nat);
 
+            
+            
+
             var salvou = _funcionarioController.Cadastrar(txtNome.Text, Data_Nascimento,
                 rbMasculino.Checked, txtCpf.Text, nacionalidade, naturalidade, txtEmail.Text, txtTelefone.Text,
                 txtTelefoneContato.Text, txtEnderecoCep.Text, txtEnderecoLogradouro.Text, Numero, txtEnderecoComplemento.Text,
@@ -160,7 +165,6 @@ namespace AppModelo.view.Windows.Cadastros
 }
 
 
-        //PEGA A DATA DE HOJE E ACRESCENTA 1 DIA
-        //DateTime.Now.AddDays(1);
+        
 
 

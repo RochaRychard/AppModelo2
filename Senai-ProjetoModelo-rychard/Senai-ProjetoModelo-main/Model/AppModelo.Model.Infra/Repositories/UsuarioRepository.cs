@@ -7,6 +7,12 @@ namespace AppModelo.Model.Infra.Repositories
 {
     public class UsuarioRepository
     {
+        /// <summary>
+        /// MÉTODO PARA OBTER DADOS DE EMAIL E SENHA DO USUÁRIO NO BANCO DE DADOS
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
         public UsuarioEntity obter(string usuario, string senha)
         {
             var sql = $"SELECT Email, Senha FROM usuarios WHERE Email = '{usuario}' AND Senha = '{senha}';";
@@ -17,6 +23,12 @@ namespace AppModelo.Model.Infra.Repositories
 
             return resultado;
         }
+
+        /// <summary>
+        /// MÉTODO PARA OBTER O EMAIL NO BANCO DE DADOS
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public UsuarioEntity ObterPorEmail(string email)
         {
             var sql = $"SELECT Email FROM usuarios WHERE Email = '{email}' ";
@@ -27,6 +39,13 @@ namespace AppModelo.Model.Infra.Repositories
 
             return resultado;
         }
+
+        /// <summary>
+        /// MÉTODO PARA ATUALIZAR EMAIL E NOVA SENHA NO BANCO DE DADOS
+        /// </summary>
+        /// <param name="novaSenha"></param>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public bool AtualizarSenha(string novaSenha, string email)
         {
             var sql = $"UPDATE usuarios SET Senha = '{novaSenha}' WHERE email = '{email}'";
@@ -37,6 +56,13 @@ namespace AppModelo.Model.Infra.Repositories
 
             return resultado > 0;
         }
+
+        /// <summary>
+        /// MÉTODO PARA INSERIR EMAIL E SENHA NO BANCO DE DADOS
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
         public bool Inserir(string email, string senha)
         {
             
