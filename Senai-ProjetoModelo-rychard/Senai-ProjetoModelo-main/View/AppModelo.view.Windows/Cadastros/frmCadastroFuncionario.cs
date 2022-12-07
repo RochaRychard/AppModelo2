@@ -4,6 +4,7 @@ using AppModelo.Model.Domain.Validator;
 using AppModelo.view.Windows.Helpers;
 using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace AppModelo.view.Windows.Cadastros
@@ -25,7 +26,7 @@ namespace AppModelo.view.Windows.Cadastros
             cmbNaturalidade.DisplayMember = "Descricao";
             cmbNaturalidade.ValueMember = "id";
 
-            btnCadastrarFuncionario.Enabled = false;
+            //btnCadastrarFuncionario.Enabled = false;
 
         }
 
@@ -54,10 +55,11 @@ namespace AppModelo.view.Windows.Cadastros
         /// <param name="e"></param>
         private void txtNome_Validating(object sender, CancelEventArgs e)
         {
+            
             //VERIFICA SE A QUANTIDADE DE LETRAS ESTÁ CORRETA
             if (txtNome.Text.Length < 6)
             {
-                errorProvider.SetError(txtNome, "Digite seu nome completo!");
+                errorProvider.SetError(txtNome, "Digite o nome completo!");
                 return;
             }
 
@@ -66,7 +68,7 @@ namespace AppModelo.view.Windows.Cadastros
             {
                 if (char.IsNumber(letra))
                 {
-                    errorProvider.SetError(txtNome, "Seu nome parece errado!");
+                    errorProvider.SetError(txtNome, "O nome parece errado!");
                     return;
                 }
             }
@@ -132,8 +134,66 @@ namespace AppModelo.view.Windows.Cadastros
         /// <param object="sender"></param>
         /// <param EventArgs="e"></param>
         private void btnCadastrarFuncionario_Click(object sender, EventArgs e)
-
         {
+            /*
+            if (string.IsNullOrEmpty(txtNome.Text))
+            {   
+                btnCadastrarFuncionario.Enabled = false;
+                errorProvider.SetError(txtNome, "Digite o nome completo!");
+                Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtDataNascimento.Text))
+            {
+                btnCadastrarFuncionario.Enabled = false;
+                errorProvider.SetError(txtDataNascimento, "Digite a data de nascimento!");
+                Focus();
+                return;
+            }
+            
+            if (string.IsNullOrEmpty(txtCpf.Text))
+            {
+                btnCadastrarFuncionario.Enabled = false;
+                errorProvider.SetError(txtCpf, "Digite o cpf!");
+                Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                btnCadastrarFuncionario.Enabled = false;
+                errorProvider.SetError(txtEmail, "Digite o email!");
+                Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtTelefone.Text))
+            {
+                btnCadastrarFuncionario.Enabled = false;
+                errorProvider.SetError(txtTelefone, "Digite o telefone!");
+                Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtEnderecoCep.Text))
+            {
+                btnCadastrarFuncionario.Enabled = false;
+                errorProvider.SetError(txtEnderecoCep, "Digite o cep!");
+                Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtEnderecoNumero.Text))
+            {
+                btnCadastrarFuncionario.Enabled = false;
+                errorProvider.SetError(txtEnderecoNumero, "Digite o número!");
+                Focus();
+                return;
+            }*/
+
+
+
             var Data_Nascimento = Convert.ToDateTime(txtDataNascimento.Text);
 
             var Numero = int.Parse(txtEnderecoNumero.Text);
